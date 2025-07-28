@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.765" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-07-28T00:13:47" tests="0" file="cypress/e2e/gui/login/login.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Cenários Login" timestamp="2025-07-28T00:13:47" tests="3" time="11.723" failures="0">
+    <testcase name="Cenários Login 01 - Login realizado com sucesso" time="6.835" classname="01 - Login realizado com sucesso">
+    </testcase>
+    <testcase name="Cenários Login 02 - Tentativa de Login com usuário inválido" time="2.287" classname="02 - Tentativa de Login com usuário inválido">
+    </testcase>
+    <testcase name="Cenários Login 03 - Tentativa de Login com senha inválida" time="2.528" classname="03 - Tentativa de Login com senha inválida">
+    </testcase>
+  </testsuite>
+</testsuites>

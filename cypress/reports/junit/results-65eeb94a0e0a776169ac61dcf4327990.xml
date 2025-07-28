@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.617" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-07-28T00:14:01" tests="0" file="cypress/e2e/gui/produtos/produtos.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="validação de pesquisa de produtos " timestamp="2025-07-28T00:14:01" tests="3" time="32.536" failures="0">
+    <testcase name="validação de pesquisa de produtos  04 - Deve Pesquisar pelo produto Blue top" time="9.445" classname="04 - Deve Pesquisar pelo produto Blue top">
+    </testcase>
+    <testcase name="validação de pesquisa de produtos  05 - Deve Pesquisar pelo produto Summer White Top" time="6.895" classname="05 - Deve Pesquisar pelo produto Summer White Top">
+    </testcase>
+    <testcase name="validação de pesquisa de produtos  06 - Deve adicionar dois produtos ao carrinho e validar se estão presentes" time="14.244" classname="06 - Deve adicionar dois produtos ao carrinho e validar se estão presentes">
+    </testcase>
+  </testsuite>
+</testsuites>

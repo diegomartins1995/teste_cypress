@@ -1,0 +1,36 @@
+{
+  "name": "teste-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gui": "npx cypress open",
+    "cy:run:folder": "cypress run --browser chrome --headless --spec \"cypress/e2e/gui/**/*.cy.js\"",
+    "cy:run:folder:api": "cypress run --browser chrome --headless --spec \"cypress/e2e/api/**/*.cy.js\"",
+    "test": "npm run cy:run:folder",
+    "api": "npm run cy:run:folder:api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegomartins1995/teste_cypress.git"
+  },
+  "keywords": [],
+  "author": "Diego Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegomartins1995/teste_cypress/issues"
+  },
+  "homepage": "https://github.com/diegomartins1995/teste_cypress#readme",
+  "devDependencies": {
+    "cypress": "^14.5.3"
+  },
+  "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.3.0",
+    "cypress-drag-drop": "^1.1.1",
+    "cypress-mochawesome-reporter": "^4.0.0",
+    "cypress-multi-reporters": "^2.0.5",
+    "cypress-plugin-api": "^2.11.2",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
