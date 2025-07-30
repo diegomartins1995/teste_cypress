@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/diegomartins1995/teste_cypress#readme",
   "devDependencies": {
-    "cypress": "^14.5.3"
+    "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "cypress": "^14.5.3",
+    "esbuild": "^0.25.8"
   },
   "dependencies": {
     "@4tw/cypress-drag-drop": "^2.3.0",

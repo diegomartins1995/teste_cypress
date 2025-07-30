@@ -1,6 +1,6 @@
 Cypress.Commands.add('loginUsuario', () => {
     cy.visit('/login')
-    cy.get('[class="login-form"]')
+    cy.get('.login-form')
         .contains('Login to your account')
     cy.get('[data-qa="login-email"]')
         .type(Cypress.env('usuario_login'), { log: false })
@@ -12,7 +12,7 @@ Cypress.Commands.add('loginUsuario', () => {
 
 Cypress.Commands.add('loginUsuarioInvalido', () => {
     cy.visit('/login')
-    cy.get('[class="login-form"]')
+    cy.get('.login-form')
         .contains('Login to your account')
     cy.get('[data-qa="login-email"]')
         .type(Cypress.env('login_invalido'), { log: false })
@@ -24,7 +24,7 @@ Cypress.Commands.add('loginUsuarioInvalido', () => {
 
 Cypress.Commands.add('loginSenhaInvalida', () => {
     cy.visit('/login')
-    cy.get('[class="login-form"]')
+    cy.get('.login-form')
         .contains('Login to your account')
     cy.get('[data-qa="login-email"]')
         .type(Cypress.env('usuario_login'), { log: false })
@@ -35,7 +35,7 @@ Cypress.Commands.add('loginSenhaInvalida', () => {
 })
 
 Cypress.Commands.add('validaMsgLoginOk', () => {
-    cy.get('[class="nav navbar-nav"]')
+    cy.get('.nav navbar-nav')
         .contains('Logged in as Diego Martins')
 })
 

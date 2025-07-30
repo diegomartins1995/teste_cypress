@@ -1,18 +1,21 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
+const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin;
+const addCucumberPreprocessorPlugin = require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin;
 
 module.exports = defineConfig({
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
     mochaJunitReporterReporterOptions: {
-      mochaFile: 'cypress/reports/junit/results-[hash].xml'
+      mochaFile: 'cypress/reports/junit/results-[hash].xml',
     },
     cypressMochawesomeReporterReporterOptions: {
       charts: true,
       reportPageTitle: 'Teste Cypress',
       embeddedScreenshots: true,
       saveAllAttempts: false,
-      reportDir: "cypress/reports",
+      reportDir: 'cypress/reports',
       html: true,
       json: true,
     },
@@ -22,13 +25,28 @@ module.exports = defineConfig({
   viewportHeight: 660,
   experimentalMemoryManagement: true,
   e2e: {
-    baseUrl: "https://www.automationexercise.com",
+    baseUrl: 'https://www.automationexercise.com',
     retries: {
       runMode: 1,
       openMode: 1,
     },
-    setupNodeEvents(on, config) {
+    specPattern: 'cypress/e2e/**/*.feature',
+    supportFile: 'cypress/support/e2e.js',
+    async setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
+
+      await addCucumberPreprocessorPlugin(on, config, {
+        stepDefinitions: 'cypress/e2e/gui/**/',
+      });
+
+      on(
+        'file:preprocessor',
+        createBundler({
+          plugins: [createEsbuildPlugin(config)],
+        })
+      );
+
+      return config;
     },
   },
 });
