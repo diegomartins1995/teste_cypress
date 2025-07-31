@@ -60,7 +60,7 @@ Após a conclusão, seu ambiente estará pronto para executar os testes.
 
 ---
 
-## ⚡ Executando os Testes
+## Executando os Testes
 
 Você pode executar os testes do Cypress de duas formas principais:
 
