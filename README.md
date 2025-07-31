@@ -35,18 +35,25 @@ Siga os passos abaixo para configurar o ambiente e instalar todas as dependênci
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO_GIT>
+    git clone <git@github.com:diegomartins1995/teste_cypress.git>
     ```
 
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd nome-da-pasta-do-projeto
+    cd teste_cypress
     ```
 
 3.  **Instale as dependências:**
-    Este comando irá baixar todas as bibliotecas listadas no arquivo `package.json`, incluindo o Cypress.
+    Este comando irá baixar todas as bibliotecas listadas no arquivo `package.json`
     ```bash
     npm install
+    ```
+4.  **Instale o Cypress:**
+   
+    ```bash
+    npm install cypress --save-dev
+
+    Neste projeto foi utilizada a versão 14.5.3
     ```
 
 Após a conclusão, seu ambiente estará pronto para executar os testes.
