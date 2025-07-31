@@ -87,27 +87,5 @@ Localização: Você pode encontrar os relatórios na pasta cypress/reports/.
 
 Como visualizar: Abra o arquivo .html gerado dentro dessa pasta em qualquer navegador para ver os resultados detalhados, incluindo screenshots das falhas.
 
-### 4. Estrutura de Pastas
-Uma visão geral das pastas mais importantes do projeto:
-
-
-
-/
-├── cypress/
-│   ├── e2e/
-│   │   └── gui/
-│   │       └── features/       # Contém os arquivos de funcionalidades (.feature)
-│   ├── fixtures/               # Massa de dados estática em formato .json
-│   └── support/
-│       ├── e2e.js              # Arquivo de configuração que importa os comandos
-│       ├── gui/                # Comandos customizados, organizados por funcionalidade
-│       │   ├── login/
-│       │   └── produtos/
-│       └── step_definitions/   # Contém os arquivos de implementação dos passos (.js)
-└── package.json                # Lista de dependências e scripts do projeto
-
-
-
-
 
 
