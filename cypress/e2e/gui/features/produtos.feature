@@ -1,6 +1,6 @@
 
 @produtos
-Feature: Validação de pesquisa de produtos e produtos no carrinho
+Feature: Validação de pesquisa de produto e produto no carrinho
 
   Scenario: Usuário realiza busca pelo Produto "Blue Top"
     Given que o usuário esteja na tela de produtos

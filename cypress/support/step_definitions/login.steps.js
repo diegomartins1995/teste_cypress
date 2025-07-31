@@ -1,6 +1,7 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
 Given('que o usuário está na página de login', () => {
+  cy.visit('/login')
 });
 
 When('ele preenche corretamente os dados de login válidos', () => {

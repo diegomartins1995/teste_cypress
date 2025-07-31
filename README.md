@@ -35,25 +35,32 @@ Siga os passos abaixo para configurar o ambiente e instalar todas as dependênci
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO_GIT>
+    git clone <git@github.com:diegomartins1995/teste_cypress.git>
     ```
 
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd nome-da-pasta-do-projeto
+    cd teste_cypress
     ```
 
 3.  **Instale as dependências:**
-    Este comando irá baixar todas as bibliotecas listadas no arquivo `package.json`, incluindo o Cypress.
+    Este comando irá baixar todas as bibliotecas listadas no arquivo `package.json`
     ```bash
     npm install
+    ```
+4.  **Instale o Cypress:**
+   
+    ```bash
+    npm install cypress --save-dev
+
+    Neste projeto foi utilizada a versão 14.5.3
     ```
 
 Após a conclusão, seu ambiente estará pronto para executar os testes.
 
 ---
 
-## ⚡ Executando os Testes
+## Executando os Testes
 
 Você pode executar os testes do Cypress de duas formas principais:
 
@@ -63,38 +70,22 @@ Este modo abre o Test Runner do Cypress, permitindo que você veja os testes sen
 
 ```bash
 npx cypress open
-2. Modo Headless (Via Linha de Comando)
+```
+
+### 2. Modo Headless (Via Linha de Comando)
 Este modo executa todos os testes em segundo plano, sem abrir a interface gráfica do navegador. É o modo utilizado em ambientes de Integração Contínua (CI/CD) para validações automáticas. Ao final, os vídeos e relatórios são gerados.
 
-Bash
+```bash
 
 npx cypress run
-Relatórios (Reports)
+
+```
+### 3. Relatórios (Reports)
 Após a execução dos testes no modo headless (npx cypress run), um relatório HTML interativo é gerado.
 
 Localização: Você pode encontrar os relatórios na pasta cypress/reports/.
 
 Como visualizar: Abra o arquivo .html gerado dentro dessa pasta em qualquer navegador para ver os resultados detalhados, incluindo screenshots das falhas.
-
-Estrutura de Pastas
-Uma visão geral das pastas mais importantes do projeto:
-
-/
-├── cypress/
-│   ├── e2e/
-│   │   └── gui/
-│   │       └── features/       # Contém os arquivos de funcionalidades (.feature)
-│   ├── fixtures/               # Massa de dados estática em formato .json
-│   └── support/
-│       ├── e2e.js              # Arquivo de configuração que importa os comandos
-│       ├── gui/                # Comandos customizados, organizados por funcionalidade
-│       │   ├── login/
-│       │   └── produtos/
-│       └── step_definitions/   # Contém os arquivos de implementação dos passos (.js)
-└── package.json                # Lista de dependências e scripts do projeto
-
-
-
 
 
 
