@@ -72,7 +72,7 @@ Este modo abre o Test Runner do Cypress, permitindo que você veja os testes sen
 npx cypress open
 ```
 
-2. Modo Headless (Via Linha de Comando)
+### 2. Modo Headless (Via Linha de Comando)
 Este modo executa todos os testes em segundo plano, sem abrir a interface gráfica do navegador. É o modo utilizado em ambientes de Integração Contínua (CI/CD) para validações automáticas. Ao final, os vídeos e relatórios são gerados.
 
 ```bash
@@ -80,15 +80,17 @@ Este modo executa todos os testes em segundo plano, sem abrir a interface gráfi
 npx cypress run
 
 ```
-Relatórios (Reports)
+### 3. Relatórios (Reports)
 Após a execução dos testes no modo headless (npx cypress run), um relatório HTML interativo é gerado.
 
 Localização: Você pode encontrar os relatórios na pasta cypress/reports/.
 
 Como visualizar: Abra o arquivo .html gerado dentro dessa pasta em qualquer navegador para ver os resultados detalhados, incluindo screenshots das falhas.
 
-Estrutura de Pastas
+### 4. Estrutura de Pastas
 Uma visão geral das pastas mais importantes do projeto:
+
+
 
 /
 ├── cypress/
