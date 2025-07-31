@@ -1,27 +1,25 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
 Given('que o usuário está na página de login', () => {
-  cy.visit('/login');
 });
 
-When('ele realiza o login válido', () => {
-  cy.loginUsuario(); 
+When('ele preenche corretamente os dados de login válidos', () => {
+  cy.loginUsuario();
 });
 
-When('ele realiza o login com usuário inválido', () => {
-  cy.loginUsuarioInvalido(); 
+Then('ele deve ver a mensagem de login bem-sucedido', () => {
+  cy.validaMsgLoginOk();
 });
 
-When('ele realiza o login com senha inválida', () => {
+When('ele preenche o e-mail inválido e senha válida', () => {
+  cy.loginUsuarioInvalido();
+});
+
+Then('ele deve ver a mensagem de erro de login', () => {
+  cy.validaMsgLogiIncorreto();
+});
+
+When('ele preenche o e-mail válido e senha inválida', () => {
   cy.loginSenhaInvalida();
 });
 
-Then('ele deve ver a mensagem {string}', (msg) => {
-  if (msg === 'Logged in as Diego Martins') {
-    cy.validaMsgLoginOk();
-  } else if (msg === 'Your email or password is incorrect') {
-    cy.validaMsgLogiIncorreto();
-  } else {
-    cy.contains(msg).should('be.visible');
-  }
-});

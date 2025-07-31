@@ -28,12 +28,15 @@
     "esbuild": "^0.25.8"
   },
   "dependencies": {
+    "14": "^3.1.6",
     "@4tw/cypress-drag-drop": "^2.3.0",
     "cypress-drag-drop": "^1.1.1",
     "cypress-mochawesome-reporter": "^4.0.0",
     "cypress-multi-reporters": "^2.0.5",
     "cypress-plugin-api": "^2.11.2",
+    "install": "^0.13.0",
     "mocha-junit-reporter": "^2.2.1",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "npm": "^11.5.2"
   }
 }
