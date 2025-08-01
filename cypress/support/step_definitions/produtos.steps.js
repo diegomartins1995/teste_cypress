@@ -5,7 +5,7 @@ Before({ tags: '@produtos' }, () => {
   cy.validaMsgLoginOk();
 });
 
-After(() => {
+After({ tags: '@produtos' }, () => {
   cy.telaCarrinho();
   cy.btnExcluiItemDoCarrinho();
   cy.verificaCarrinhoVazio();
@@ -19,8 +19,8 @@ When('ele realizar uma pesquisa pelo termo {string}', (termo) => {
   cy.realizaPesquisa(termo);
 });
 
-Then('o sistema deve retornar somente o produto {string}', () => {
-  cy.validaProdutoBlueTop();
+Then('o sistema deve retornar somente o produto {string}', (produto) => {
+  cy.contains(produto);
 });
 
 Given('que o usuário acesse a pagina inicial da Loja e verifica que o carrinho está vazio', () => {
@@ -29,16 +29,19 @@ Given('que o usuário acesse a pagina inicial da Loja e verifica que o carrinho 
   cy.verificaCarrinhoVazio();
 });
 
-When('ele realizar uma pesquisa e incluir o produto {string} no Carrinho', () => {
+When('ele realizar uma pesquisa e incluir o produto {string} no Carrinho', (produto) => {
   cy.telaProdutos();
-  cy.realizaPesquisa('Blue Top');
-  cy.validaProdutoBlueTop();
-  cy.telaDetalheProdutoBlueTop();
-  cy.btnAdicionaItemNoCarrinho();
+  cy.realizaPesquisa(produto);
+  cy.contains(produto);
+  cy.visit('/product_details/1');
+  cy.get('.product-information')
+    .contains('Category: Women > Tops');
+  cy.get('.btn.btn-default.cart')
+    .click();
   cy.btncontinuarComprando();
 });
 
-Then('o produto {string} deve ser apresentado corretamente no Carrinho', () => {
+Then('o produto {string} deve ser apresentado corretamente no Carrinho', (produto) => {
   cy.telaCarrinho();
-  cy.validaCarrinho('Blue Top');
+  cy.contains(produto);
 });

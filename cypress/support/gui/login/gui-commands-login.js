@@ -1,45 +1,47 @@
+import { LoginPage } from '../../page_objects/LoginPage';
+
 Cypress.Commands.add('loginUsuario', () => {
-    cy.visit('/login')
-    cy.get('.login-form')
-        .contains('Login to your account')
-    cy.get('[data-qa="login-email"]')
-        .type(Cypress.env('usuario_login'), { log: false })
-    cy.get('[data-qa="login-password"]')
-        .type(Cypress.env('usuario_senha'), { log: false })
-    cy.get('[data-qa="login-button"]')
-        .click()
-})
+    cy.visit(LoginPage.url);
+    cy.get(LoginPage.formLogin)
+        .contains(LoginPage.tituloLogin);
+    cy.get(LoginPage.inputEmail)
+        .type(Cypress.env('usuario_login'), { log: false });
+    cy.get(LoginPage.inputSenha)
+        .type(Cypress.env('usuario_senha'), { log: false });
+    cy.get(LoginPage.botaoLogin)
+        .click();
+});
 
 Cypress.Commands.add('loginUsuarioInvalido', () => {
-    cy.visit('/login')
-    cy.get('.login-form')
-        .contains('Login to your account')
-    cy.get('[data-qa="login-email"]')
-        .type(Cypress.env('login_invalido'), { log: false })
-    cy.get('[data-qa="login-password"]')
-        .type(Cypress.env('usuario_senha'), { log: false })
-    cy.get('[data-qa="login-button"]')
-        .click()
-})
+    cy.visit(LoginPage.url);
+    cy.get(LoginPage.formLogin)
+        .contains(LoginPage.tituloLogin);
+    cy.get(LoginPage.inputEmail)
+        .type(Cypress.env('login_invalido'), { log: false });
+    cy.get(LoginPage.inputSenha)
+        .type(Cypress.env('usuario_senha'), { log: false });
+    cy.get(LoginPage.botaoLogin)
+        .click();
+});
 
 Cypress.Commands.add('loginSenhaInvalida', () => {
-    cy.visit('/login')
-    cy.get('.login-form')
-        .contains('Login to your account')
-    cy.get('[data-qa="login-email"]')
-        .type(Cypress.env('usuario_login'), { log: false })
-    cy.get('[data-qa="login-password"]')
-        .type(Cypress.env('senha_invalida'), { log: false })
-    cy.get('[data-qa="login-button"]')
-        .click()
-})
+    cy.visit(LoginPage.url);
+    cy.get(LoginPage.formLogin)
+        .contains(LoginPage.tituloLogin);
+    cy.get(LoginPage.inputEmail)
+        .type(Cypress.env('usuario_login'), { log: false });
+    cy.get(LoginPage.inputSenha)
+        .type(Cypress.env('senha_invalida'), { log: false });
+    cy.get(LoginPage.botaoLogin)
+        .click();
+});
 
 Cypress.Commands.add('validaMsgLoginOk', () => {
-    cy.get('.nav navbar-nav')
-        .contains('Logged in as Diego Martins')
-})
+    cy.get(LoginPage.navLogado)
+        .contains(LoginPage.textoUsuarioLogado);
+});
 
 Cypress.Commands.add('validaMsgLogiIncorreto', () => {
-    cy.get('[style="color: red;"]')
-        .contains('Your email or password is incorrect!')
-})
+    cy.get(LoginPage.mensagemErro)
+        .contains(LoginPage.textoErroLogin);
+});
