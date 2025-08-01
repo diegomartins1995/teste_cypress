@@ -27,7 +27,7 @@ Antes de começar, certifique-se de que você tem as seguintes ferramentas insta
 * **Git:** Para clonar o repositório.
     * *Você pode baixar em: [git-scm.com](https://git-scm.com/)*
 
----
+--- 
 
 ## Instalação e Configuração
 
